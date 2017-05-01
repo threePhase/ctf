@@ -44,7 +44,7 @@ def generate_header(mtype, idx, size):
     hdr |= (idx << 5);
 
     # set client message bit
-    if (mtype == MTYPE_CLI): 
+    if mtype == MTYPE_CLI:
         hdr |= 0x80
     else:
         hdr &= 0x80
@@ -247,5 +247,5 @@ def main():
     send_messages(p, packets)
 
 
-if (__name__ ==  "__main__"):
+if __name__ ==  "__main__":
     main()
